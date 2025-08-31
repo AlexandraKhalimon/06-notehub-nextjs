@@ -1,4 +1,4 @@
-import type { Note, NewNote } from "../types/notes";
+import type { Note, NewNote } from "../types/note";
 import axios from "axios";
 
 interface FetchNotesResponse{

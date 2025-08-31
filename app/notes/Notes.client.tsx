@@ -1,7 +1,7 @@
 "use client"
 
 import css from './page.module.css';
-import type { Note } from '@/types/notes';
+import type { Note } from '@/types/note';
 import { fetchNotes } from '@/lib/api';
 import NoteList from '@/components/NoteList/NoteList';
 import Pagination from '@/components/Pagination/Pagination';
