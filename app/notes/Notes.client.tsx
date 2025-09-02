@@ -38,7 +38,7 @@ export default function NotesClient() {
   return (
     <div className={css.app}>
       <header className={css.toolbar}>
-        <SearchBox text={ searchQuery } onSearch={handleChange}/>
+        <SearchBox value={ searchQuery } onSearch={handleChange}/>
         {totalPages > 1 && <Pagination totalPages={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage}/>}
         <button className={css.button} onClick={openModal}>Create note +</button>
         {isModalOpen && <Modal onClose={closeModal}><NoteForm onClose={closeModal}/></Modal>}
