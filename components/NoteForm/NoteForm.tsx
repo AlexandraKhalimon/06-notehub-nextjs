@@ -13,7 +13,6 @@ interface FormValues {
 
 interface NoteFormProps {
     onClose: () => void;
-    onSuccess: () => void;
 }
 
 
@@ -29,7 +28,7 @@ const NoteFormSchema = Yup.object().shape({
         .oneOf(["Todo", "Work", "Personal", "Meeting", "Shopping"] as const)
 })
 
-export default function NoteForm({onClose, onSuccess}: NoteFormProps) {
+export default function NoteForm({onClose}: NoteFormProps) {
     const fieldId = useId();
 
     const initialValues: FormValues = {
@@ -44,7 +43,7 @@ export default function NoteForm({onClose, onSuccess}: NoteFormProps) {
         mutationFn: createNote,
         onSuccess:() => {
             queryClient.invalidateQueries({ queryKey: ['notes'] });
-            onSuccess();
+            onClose();
         }
     })
 
